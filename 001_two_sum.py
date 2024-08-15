@@ -1,4 +1,27 @@
 class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # hashmap
+        # key = value
+        # value = index
+        # create hashmap
+        # iterate through array
+        # start
+        # first find difference between target and value
+        # check if difference is in hashmap
+        # if not add to hashmap
+        # end
+
+        nums_map = {}  # val : index
+
+        for i in range(len(nums)):
+            difference = target - nums[i]
+            if difference in nums_map:
+                return [nums_map[difference], i]
+            nums_map[nums[i]] = i
+        return
+
+
+class Solution:
     def twoSum(self, nums, target: int):
         numsSorted = nums.copy()
         numsSorted.sort()
