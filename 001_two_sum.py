@@ -22,3 +22,30 @@ class Solution:
                 break
 
         return result
+
+
+# too slow due to nested while loops
+def twoSumNest(nums, target):
+    """
+    create 2 pointers
+    p1 points at start
+    p2 points at end
+    while p1 is less than len(nums) - 2
+    check if value of p1 + p2 = target
+    if true
+    return p1 and p2
+    if not, p2--
+    if p2 == p1, p1++
+    """
+    result = []
+    p1 = 0
+
+    while p1 < len(nums) - 1:
+        p2 = len(nums) - 1
+        while p2 != p1:
+            if target == nums[p1] + nums[p2]:
+                result = [p1, p2]
+                return result
+            else:
+                p2 -= 1
+        p1 += 1
