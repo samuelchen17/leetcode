@@ -23,6 +23,8 @@ class Solution:
             # tail node updated regardless, hence outside
             tail = tail.next
 
+        # what if one is empty and the other isn't
+        # find the non empty list and add the rest to tail
         if list1:
             tail.next = list1
         elif list2:

@@ -1,7 +1,11 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        # use hashmap to store the key value for ()
-        #
+        # create a hashmap for checking bracket opening and closing
+        # create a stack, and add opening brackets to the stack until reach closing bracket
+        # use hashmap to check if the top of the stack is the opening parentheses for the closing
+        # if yes, pop the stack
+        # if not, return false
+        # at the end, check if stack is empty, if empty return true, if false return false
 
         bracket_map = {")": "(", "]": "[", "}": "{"}
         stack = []
