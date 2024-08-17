@@ -10,12 +10,12 @@ def is_palindrome(str):
     p1, p2 = 0, len(str) - 1
 
     while p1 < p2:
-        if str[p1] == str[p2]:
-            p1 += 1
-            p2 -= 1
-        elif str[p1] != str[p2]:
+        if str[p1] != str[p2]:
             return False
-        return True
+        p1 += 1
+        p2 -= 1
+
+    return True
 
 
 print(is_palindrome("hello"))  # false
@@ -23,3 +23,4 @@ print(is_palindrome("aba"))  # true
 print(is_palindrome("abcba"))  # true
 print(is_palindrome("abccba"))  # true
 print(is_palindrome("melbourne"))  # false
+print(is_palindrome("melbournem"))  # false
