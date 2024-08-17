@@ -27,3 +27,20 @@ class Solution:
                 char_map[char] = 1
 
         # go through second array
+        for char in t:
+            if char in char_map:
+                # remove count
+                char_map[char] -= 1
+                # nest this if statement, only needs to run when decrement
+                if char_map[char] == 0:
+                    # delete count
+                    del char_map[char]
+            else:
+                return False
+
+        # check if hashmap is empty
+        # if empty return true else return false
+        if len(char_map) == 0:
+            return True
+        else:
+            return False
