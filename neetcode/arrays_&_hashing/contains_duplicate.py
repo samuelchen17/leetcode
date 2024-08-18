@@ -1,5 +1,5 @@
 class Solution:
-    def hasDuplicate(self, nums: List[int]) -> bool:
+    def hasDuplicate(self, nums) -> bool:
         """
         Loop through the array
         check if it already exists in hashmap
