@@ -1,5 +1,9 @@
 """
 Basically, I either use regex to make a new sentence without punctuation
+or, iterate through the sentence, and remove punctuations
+
+then loop through word in words, compare the length to longest word
+or, return max(sentence.split(), key = len)
 """
 
 import re
