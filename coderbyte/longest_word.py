@@ -1,4 +1,36 @@
+"""
+Basically, I either use regex to make a new sentence without punctuation
+"""
+
 import re
+
+
+def LongestWordNew(sen):
+    """
+    Two methods,
+    first method,
+    use regex to remove punctuations
+    then split the sentence into a list of words
+    check the length of each word vs len longest word or
+    just return max new list with key being length
+
+    second method,
+    iterate through the string
+    if character is alpha or is numeric
+    add word to new list
+    if punctuation
+    add space
+    return max new list with key being length
+    """
+
+    # code goes here
+    sen = re.sub(r"[^\w\s]", "", sen)
+
+    return max(sen.split(), key=len)
+
+
+# keep this function call here
+print(LongestWordNew(input()))
 
 
 def LongestWord(sen):
