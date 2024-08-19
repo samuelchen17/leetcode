@@ -1,21 +1,30 @@
 import re
 
 
-def UsernameValidation(strParam):
+def CodelandUsernameValidation(strParam):
+    """
+    check if first is a letter
+    check if last is a underscore
+    check if letters, numbers and underscore
+    """
 
-    if len(strParam) < 4 or len(strParam) > 25:
+    s = strParam
+
+    if s[-1] == "_":
         return False
-    elif strParam[0].isalpha() != True:
+    if s[0].isalpha() != True:
         return False
-    elif strParam[-1] == "_":
+    if len(s) < 4 or len(s) > 25:
         return False
 
-    if not re.match("^[A-Za-z0-9_]+$", strParam):
+    if not re.match("^[A-Za-z0-9_]+$", s):
         return False
+
+    return True
 
     # code goes here
-    return True
+    return strParam
 
 
 # keep this function call here
-print(UsernameValidation(input()))
+print(CodelandUsernameValidation(input()))
