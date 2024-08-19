@@ -1,3 +1,46 @@
+def QuestionsMarksNew(strParam):
+    """
+    create hashmap
+    iterate through string
+    if number
+      difference = 10 - number
+      if difference in hashmap
+        grab the array beginning from hashmap index to current index
+        loop through to count question marks
+        if at end
+        if count != 3
+          return False
+        else:
+          pairfound = true
+      save to hashmap
+      key = value, value = index
+    Return pairfound
+    """
+    hashmap = {}
+    pair_found = False
+
+    for i, char in enumerate(strParam):
+        if char.isnumeric():
+            num = int(char)
+            difference = 10 - num
+            if difference in hashmap:
+                count = 0
+                subStr = strParam[hashmap[difference] : i]
+                for char in subStr:
+                    if char == "?":
+                        count += 1
+                if count != 3:
+                    return False
+                else:
+                    pair_found = True
+            hashmap[num] = i
+    return pair_found
+
+
+# keep this function call here
+print(QuestionsMarksNew(input()))
+
+
 def QuestionsMarks(strParam):
     """
     use hashmap to store the number as key and index as value
