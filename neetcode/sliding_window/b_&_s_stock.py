@@ -12,7 +12,7 @@ class Solution:
         if bigger, check for profit
         compare with max profit
         else move p1 to p2
-        increment s
+        increment p2
         """
 
         b, s = 0, 1
